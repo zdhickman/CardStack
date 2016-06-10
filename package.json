@@ -1,6 +1,6 @@
 {
   "name": "card-stack-test",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Card Stacks",
   "main": "index.js",
   "scripts": {
