@@ -26,4 +26,4 @@ var Card = React.createClass({
   }
 });
 
-export default Card;
+module.exports = Card;

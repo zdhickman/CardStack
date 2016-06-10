@@ -31,4 +31,4 @@ var CardStack = React.createClass({
   }
 });
 
-export default CardStack;
+module.exports = CardStack;

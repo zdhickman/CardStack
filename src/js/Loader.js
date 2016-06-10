@@ -37,4 +37,4 @@ var Loader = React.createClass({
   }
 });
 
-export default Loader;
+module.exports = Loader;
