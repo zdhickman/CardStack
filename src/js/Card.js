@@ -1,7 +1,14 @@
-import {Component, PropTypes} from 'react';
-import classNames from 'classnames';
+var React = require('react');
+var classNames = require('classnames');
 
-class Card extends Component {
+var Card = React.createClass({
+  propTypes: {
+    onClick: React.PropTypes.func.isRequired,
+    expanded: React.PropTypes.bool.isRequired,
+    belowExpanded: React.PropTypes.bool.isRequired,
+    first: React.PropTypes.bool,
+    last: React.PropTypes.bool
+  },
 
   getBaseClassNames() {
     return classNames(
@@ -11,20 +18,12 @@ class Card extends Component {
         'card-stack__card--last': this.props.last,
         'card-stack__card--below-expanded': this.props.belowExpanded
       });
-  }
+  },
 
   // Implemented by child classes
   render() {
     return null;
   }
-}
-
-Card.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  expanded: PropTypes.bool.isRequired,
-  belowExpanded: PropTypes.bool.isRequired,
-  first: PropTypes.bool,
-  last: PropTypes.bool
-};
+});
 
 module.exports = Card;

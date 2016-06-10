@@ -1,8 +1,14 @@
-import React, { Component, PropTypes } from 'react';
+var React = require('react');
+var Loader = require('./Loader');
 
-import Loader from './Loader.jsx';
+var CardStack = React.createClass({
+  propTypes: {
+    loading: PropTypes.bool.isRequired,
+    header: PropTypes.node,
+    zeroState: PropTypes.node,
+    children: PropTypes.node
+  },
 
-class CardStack extends Component {
   render() {
     if (this.props.loading) {
       return (
@@ -23,13 +29,6 @@ class CardStack extends Component {
       </div>
     );
   }
-}
-
-CardStack.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  header: PropTypes.node,
-  zeroState: PropTypes.node,
-  children: PropTypes.node
-};
+});
 
 module.exports = CardStack;

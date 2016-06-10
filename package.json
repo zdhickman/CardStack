@@ -2,9 +2,10 @@
   "name": "card-stack-test",
   "version": "0.0.11",
   "description": "Card Stacks",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lib": "gulp build",
+    "prepublish": "npm run lib"
   },
   "author": "zhickman@hubspot.com",
   "license": "ISC",
@@ -12,21 +13,17 @@
     "classnames": "^2.2.5",
     "react": "^15.1.0"
   },
-  "main": "lib/index.js",
   "devDependencies": {
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
+    "babel-runtime": "^6.9.2",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat-css": "^2.3.0",
     "gulp-load-plugins": "^1.2.4",
     "gulp-stylus": "^2.4.0"
-  },
-  "scripts": {
-    "lib": "gulp build",
-    "prepublish": "npm run lib"
   }
 }

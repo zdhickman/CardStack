@@ -1,5 +1,5 @@
-var Card = require('./js/Card.jsx');
-var CardStack = require('./js/CardStack.jsx');
+var Card = require('./js/Card');
+var CardStack = require('./js/CardStack');
 
 module.exports = {
   Card: Card,
