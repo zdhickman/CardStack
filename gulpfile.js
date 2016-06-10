@@ -6,14 +6,14 @@ var babel = require('gulp-babel');
 var $ = require('gulp-load-plugins')();
 
 var src = 'src/';
-var dist = 'dist/';
+var lib = 'lib/';
 
 gulp.task('scripts', function() {
   return gulp.src('./src/js/**')
     .pipe(babel({
       presets: ['react']
     }))
-    .pipe(gulp.dest(dist + 'js/'));
+    .pipe(gulp.dest(lib + 'js/'));
 });
 
 gulp.task('lint', function () {
@@ -29,7 +29,7 @@ gulp.task('styles', function() {
       compress: true
     }))
     .pipe(concatCss('style.css'))
-    .pipe(gulp.dest(dist + 'css/'));
+    .pipe(gulp.dest(lib + 'css/'));
 });
 
 gulp.task('clean', function(cb) {
