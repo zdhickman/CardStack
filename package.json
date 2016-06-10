@@ -1,0 +1,33 @@
+{
+  "name": "card-stack",
+  "version": "0.0.1",
+  "description": "Card Stacks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhickman@hubspot.com",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+   "babel-preset-react": "^6.5.0",
+    "del": "^2.2.0",
+    "eslint-config-hubspot": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-stylus": "^2.4.0"
+  },
+  "scripts": {
+    "lib": "gulp build",
+    "prepublish": "npm run lib"
+  }
+}
