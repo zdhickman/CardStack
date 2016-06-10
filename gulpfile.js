@@ -14,7 +14,7 @@ gulp.task('scripts', function() {
       src + '/**'
     ])
     .pipe(babel({
-      presets: ['react']
+      presets: ['react', 'es2015']
     }))
     .pipe(gulp.dest(lib));
 });
