@@ -19,13 +19,6 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(lib));
 });
 
-gulp.task('lint', function () {
-  return gulp.src([src + 'js/**/*.{js,jsx}'])
-    .pipe($.eslint())
-    .pipe($.eslint.format())
-    .pipe($.eslint.failOnError());
-});
-
 gulp.task('styles', function() {
   return gulp.src(src + 'css/**/*.styl')
     .pipe($.stylus({
@@ -35,12 +28,8 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(lib + 'css/'));
 });
 
-gulp.task('clean', function(cb) {
-  del([lib], cb);
-});
-
 gulp.task('build', function() {
-  gulp.start(['lint', 'scripts', 'styles']);
+  gulp.start(['scripts', 'styles']);
 });
 
 gulp.task('default', ['build']);
