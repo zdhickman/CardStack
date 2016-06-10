@@ -3,10 +3,10 @@ var Loader = require('./Loader');
 
 var CardStack = React.createClass({
   propTypes: {
-    loading: PropTypes.bool.isRequired,
-    header: PropTypes.node,
-    zeroState: PropTypes.node,
-    children: PropTypes.node
+    loading: React.PropTypes.bool.isRequired,
+    header: React.PropTypes.node,
+    zeroState: React.PropTypes.node,
+    children: React.PropTypes.node
   },
 
   render() {
