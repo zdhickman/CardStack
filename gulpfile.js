@@ -9,11 +9,14 @@ var src = 'src/';
 var lib = 'lib/';
 
 gulp.task('scripts', function() {
-  return gulp.src('./src/js/**')
+  return gulp.src([
+      '!' + src + '/css/**',
+      src + '/**'
+    ])
     .pipe(babel({
       presets: ['react']
     }))
-    .pipe(gulp.dest(lib + 'js/'));
+    .pipe(gulp.dest(lib));
 });
 
 gulp.task('lint', function () {
@@ -33,7 +36,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('clean', function(cb) {
-  del([dist], cb);
+  del([lib], cb);
 });
 
 gulp.task('build', function() {
