@@ -32,4 +32,4 @@ CardStack.propTypes = {
   children: PropTypes.node
 };
 
-export default CardStack;
+module.exports = CardStack;

@@ -27,4 +27,4 @@ Card.propTypes = {
   last: PropTypes.bool
 };
 
-export default Card;
+module.exports = Card;

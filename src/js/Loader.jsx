@@ -37,4 +37,4 @@ Loader.propTypes = {
   size: PropTypes.oneOf(['standard', 'mini'])
 };
 
-export default Loader;
+module.exports = Loader;
