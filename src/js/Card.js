@@ -3,12 +3,13 @@ var classNames = require('classnames');
 
 var Card = React.createClass({
   propTypes: {
+    summary: React.PropTypes.node.isRequired,
+    details: React.PropTypes.node.isRequired,
     expanded: React.PropTypes.bool,
-    belowExpanded: React.PropTypes.bool,
     onClick: React.PropTypes.func
   },
 
-  getBaseClassNames() {
+  getClassNames() {
     return classNames(
       'card', {
         'card--expanded': this.props.expanded
@@ -37,7 +38,7 @@ var Card = React.createClass({
 
   render() {
     return (
-      <div className={this.getBaseClassNames()}>
+      <div className={this.getClassNames()}>
         {this.renderSummary()}
         {this.renderDetails()}
       </div>
