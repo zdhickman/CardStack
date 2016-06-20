@@ -21,6 +21,7 @@
     "babel-runtime": "^6.9.2",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
     "gulp-concat-css": "^2.3.0",
     "gulp-load-plugins": "^1.2.4",

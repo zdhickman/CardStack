@@ -14,7 +14,7 @@
 
 
 // Individual card and variations
-.card-stack__card
+.card
   border $border
   border-bottom 0
   background-color #eaf0f6
@@ -22,12 +22,19 @@
   position relative
   transition all $transition-duration $transition-timing-func
   overflow-y hidden
+  margin 0
+
+  & *
+    transition all $transition-duration $transition-timing-func
 
   &:hover
     box-shadow $shadow-depth-2
     z-index 2
 
-.card-stack__card--expanded
+  &:last-child .card-stack__card-main
+    border-bottom $border
+
+.card--expanded
   margin -10px -20px -10px -20px
   border-bottom $border
   border $border-dark
@@ -42,35 +49,19 @@
     top 0
     box-shadow $shadow-depth-3
 
-  & .card-stack__card-main
+  & .card-main
     border-bottom $border
 
-.card-stack__card--below-expanded:hover
+.card--below-expanded:hover
   z-index 1
 
-.card-stack__card--last
-  & .card-stack__card-main
-    border-bottom $border
-
 // Top card content
-.card-stack__card-main
-  padding 10px 20px
-  height $initial-height
-  cursor pointer
-  background-color white
-  transition background $bg-transition-duration
-  width calc(100% - 80px)
+
+.card__summary
   display inline-block
-
-  & > div
-    display inline-block
-
-// Detailed card content
-.card-stack__card-details
   width 100%
-  padding 15px
 
-.card-stack__expanded
+.card__details
   padding 20px
   width 100%
   max-height 2000px

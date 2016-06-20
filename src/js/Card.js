@@ -1,7 +1,8 @@
 var React = require('react');
 var classNames = require('classnames');
+var Loader = require('./Loader');
 
-var Card = React.createClass({
+var Card = (Summary, Details) => React.createClass({
   propTypes: {
     onClick: React.PropTypes.func.isRequired,
     expanded: React.PropTypes.bool.isRequired,
@@ -12,17 +13,43 @@ var Card = React.createClass({
 
   getBaseClassNames() {
     return classNames(
-      'card-stack__card', {
-        'card-stack__card--expanded': this.props.expanded,
-        'card-stack__card--first': this.props.first,
-        'card-stack__card--last': this.props.last,
-        'card-stack__card--below-expanded': this.props.belowExpanded
+      'card', {
+        'card--expanded': this.props.expanded,
+        'card--first': this.props.first,
+        'card--last': this.props.last,
+        'card--below-expanded': this.props.belowExpanded
       });
   },
 
-  // Implemented by child classes
+  renderDetails() {
+    if (!this.props.expanded) {
+      return null;
+    } else if (this.props.loading) {
+      return <Loader />;
+    }
+
+    return (
+      <div className='card__details'>
+        <Details {...this.props} />
+      </div>
+    );
+  },
+
+  renderSummary() {
+    return (
+      <div className='card__summary' onClick={this.props.onClick}>
+        <Summary {...this.props} />
+      </div>
+    );
+  },
+
   render() {
-    return null;
+    return (
+      <div className={this.getBaseClassNames()}>
+        {this.renderSummary()}
+        {this.renderDetails()}
+      </div>
+    );
   }
 });
 

@@ -9,6 +9,12 @@ var CardStack = React.createClass({
     children: React.PropTypes.node
   },
 
+  getInitialState() {
+    return {
+      expandedKey: -1
+    };
+  },
+
   render() {
     if (this.props.loading) {
       return (

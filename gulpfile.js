@@ -8,6 +8,18 @@ var $ = require('gulp-load-plugins')();
 var src = 'src/';
 var lib = 'lib/';
 
+var autoprefixerBrowsers = [
+  'ie >= 9',
+  'ie_mob >= 10',
+  'ff >= 30',
+  'chrome >= 34',
+  'safari >= 6',
+  'opera >= 23',
+  'ios >= 6',
+  'android >= 4.4',
+  'bb >= 10'
+];
+
 gulp.task('scripts', function() {
   return gulp.src([
       '!' + src + '/css/**',
@@ -24,6 +36,7 @@ gulp.task('styles', function() {
     .pipe($.stylus({
       compress: true
     }))
+    .pipe($.autoprefixer({browsers: autoprefixerBrowsers}))
     .pipe(concatCss('style.css'))
     .pipe(gulp.dest(lib + 'css/'));
 });
