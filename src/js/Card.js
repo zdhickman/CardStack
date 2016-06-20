@@ -11,8 +11,7 @@ var Card = React.createClass({
   getBaseClassNames() {
     return classNames(
       'card', {
-        'card--expanded': this.props.expanded,
-        'card--below-expanded': this.props.belowExpanded
+        'card--expanded': this.props.expanded
       });
   },
 

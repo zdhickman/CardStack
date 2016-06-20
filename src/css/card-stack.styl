@@ -49,17 +49,15 @@
     top 0
     box-shadow $shadow-depth-3
 
-  & .card-main
-    border-bottom $border
-
-.card--below-expanded:hover
-  z-index 1
+  & + .card:hover
+    z-index 1
 
 // Top card content
 
 .card__summary
   display inline-block
   width 100%
+  border-bottom 1px solid #eaf0f6
 
 .card__details
   padding 20px
@@ -74,24 +72,3 @@
 
    & div
     display block
-
-.card-stack__zero-state
-  height 200px
-  padding 50px 20px
-  font-family HelveticaNeue-light
-  color #425b76
-  text-align center
-  max-width 600px
-  margin auto
-
-  & img
-    padding-bottom 30px
-
-  & h1
-    margin 0 0 20px 0
-    font-size 20px
-    font-family HelveticaNeue-medium
-
-  & p
-    font-size 16px
-    line-height 24px
