@@ -13,17 +13,22 @@ var Card = React.createClass({
     return classNames(
       'card', {
         'card--expanded': this.props.expanded
-      });
+      }
+    );
+  },
+
+  getDetailsClassNames() {
+    return classNames(
+      'card__details', {
+        'card__details--collapsed': !this.props.expanded
+      }
+    );
   },
 
   renderDetails() {
-    if (!this.props.expanded) {
-      return null;
-    }
-
     return (
-      <div className='card__details'>
-        {this.props.details}
+      <div className={this.getDetailsClassNames()}>
+        {this.props.expanded ? this.props.details : null}
       </div>
     );
   },

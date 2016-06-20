@@ -24,9 +24,6 @@
   overflow-y hidden
   margin 0
 
-  & *
-    transition all $transition-duration $transition-timing-func
-
   &:hover
     box-shadow $shadow-depth-2
     z-index 2
@@ -66,7 +63,7 @@
   overflow-y hidden
   background-color #F9FBFD
 
-  &.collapsed
+  &.card__details--collapsed
     max-height 0
     padding 0
 
